@@ -163,7 +163,7 @@
             </div>
             <div class="result" v-if="current.correct == 'wrong'"><span class="correctis">Correct answer is </span><a class="correct-title" v-if="current.url" v-on:click="wikiClick(current.url, current.title)" :href="current.url" target="_blank">{{current.title}}</a></div>
             <div class="result" v-if="current.correct == 'right'"><a class="correct-title" v-if="current.url" v-on:click="wikiClick(current.url, current.title)" :href="current.url" target="_blank">{{current.title}}</a></div>
-            <div class="button-holder" v-if="current.correct == 'right''">
+            <div class="button-holder" v-if="current.correct == 'right'">
               <button v-on:click="newRound()">Next Question</button>
             </div>
             <div class="button-holder" v-else-if="current.correct == 'wrong'">
