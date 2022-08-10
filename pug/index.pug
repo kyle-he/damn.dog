@@ -29,8 +29,10 @@ html(lang="en")
               a.correct-title(v-if="current.url" v-on:click="wikiClick(current.url, current.title)" :href="current.url" target="_blank") {{current.title}}
             .result(v-if="current.correct == 'right'")
               a.correct-title(v-if="current.url" v-on:click="wikiClick(current.url, current.title)" :href="current.url" target="_blank") {{current.title}}
-            .button-holder(v-if="current.correct == 'right' || current.correct == 'wrong'")
+            .button-holder(v-if="current.correct == 'right'")
               button(v-on:click="newRound()") Play Again
+            .button-holder(v-else-if="current.correct == 'wrong'")
+              button(v-on:click="newGame()") New Game
       
         
       include partials/_banner.pug
